@@ -1,0 +1,521 @@
+@import 'colors';
+
+/* ==============
+    Fonts
+   ============== */
+
+@font-face {
+    font-family: titillium;
+    src: url(../assets/fonts/titillium-regular.ttf);
+}
+
+@font-face {
+    font-family: merriweather;
+    src: url(../assets/fonts/merriweather-regular.ttf);
+}
+
+/* ==============
+    Mixins
+   ============== */
+
+%content-section {
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-color;
+    font-family: titillium;
+}
+
+%figure {
+    float: left;
+    margin: 20px 20px 20px 0;
+}
+
+::-moz-selection,
+::selection {
+    background: $text-selection-color;
+    text-shadow: none;
+}
+ 
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}  
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical horizontal;
+}
+
+.asterisk::after,
+.required-field::after {
+    content: "*";
+    color: $green-text-color;
+}
+
+.separator::after {
+    content: " | ";
+    color: $green-text-color;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: $white-color;
+    color: $black-color;
+    padding: 0.2em 0;
+}
+
+body {
+    font: 16px/26px Helvetica, "Helvetica Neue", Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.header-container {
+    border-bottom: 1px solid $light-grey-color;
+    
+}
+
+.header-container,
+.main-container,
+.footer-container {
+    overflow:hidden;
+}
+
+/* ==============
+    MOBILE: Header, Menu
+   ============== */
+
+#header-img {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;    
+    margin-bottom: 37px;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 18px;
+        line-height: 18px;
+        color: $text-color;
+        font-family: titillium;
+        text-align: right;
+        box-shadow: 0px 1px 0px rgba(255,255,255,0.75);
+    }
+    a {
+        display: block;
+        margin-bottom: 10px;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        color: $text-color;
+    }
+    a:hover {
+        border-radius: 3px;
+        background-color: $nav-link-hover-background-color;
+        border: 1px solid $light-grey-color;
+    }
+}
+
+
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+    article {
+        h1 {
+            font-size: 32px;
+            line-height: 18px;
+            color: $text-color;
+            font-family: titillium;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $light-grey-color;
+        }
+        h4 {
+            font-size: 14px;
+            line-height: 18px;
+            color: $date-time-color;
+            font-family: titillium;
+            font-weight: normal;
+            margin-bottom: -13px;   
+        }
+    }
+    aside {
+        margin-top: 15px;
+        font-size: 18px;
+        line-height: 18px;
+        color: $text-color;
+        font-family: titillium;
+    }
+}
+
+section {
+    @extend %content-section;
+    figure {
+        @extend %figure;
+        img {
+            width: 220px;
+            height: 130px;
+            border-radius: 2px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.25);
+            border: 3px solid $article-img-color;
+        }
+        figcaption {
+            font-size: 11px;
+            line-height: 18px;
+            color: $figcaption-color;
+            font-family: "Verdana";
+        }
+    }
+    blockquote {
+        font-family: merriweather;
+        border-top: 1px solid $light-grey-color;
+        border-bottom: 1px solid $light-grey-color;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        font-size: 18px;
+        line-height: 24px;
+        color: $text-color;
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+    }
+    h3 {
+        margin-top: 25px;
+        margin-bottom: 7px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light-grey-color;
+    }
+    .img-teaser {
+        background-color: $img-teaser-background-color;
+        border: 1px solid $light-grey-color; 
+        img {
+            width: 100%;
+        } 
+        p {
+            margin: 0;
+            padding: 8px;
+        }
+        button {
+            display: block;
+            width: 90%;
+            height: 25px;
+            margin: auto;
+            margin-bottom: 7px;
+            color: $white-color;
+            box-shadow: 0px 1px 2px rgba(0,0,0,0.35);
+            background-image: linear-gradient(0deg, #738f23 0%, #b5c58d 100%);
+            border: 1px solid $button-border-color;
+            border-radius: 5px;
+        }
+    }
+}
+
+form {
+    label {
+        text-align: left;
+        display: block;
+        margin-left: 23%;
+        margin-bottom: 10px;
+    }
+}
+
+fieldset {
+    label {
+        display: inline-block;
+        width: 20%;
+        text-align: right;
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+    button {
+        text-align: right;
+        height: 25px;
+        margin: auto;
+        margin-bottom: 7px;
+        color: $white-color;
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.35);
+        background-image: linear-gradient(0deg, #738f23 0%, #b5c58d 100%);
+        border: 1px solid $button-border-color;
+        border-radius: 5px;
+    } 
+    input,
+    textarea {
+        border-radius: 4px;
+        background-color: $white-color;
+        border: 1px solid $light-grey-color;
+        width: 50%;
+    }
+}
+
+.leistungsumfang {
+    ol {
+        float: left;
+    }
+    ul {
+        float: right;
+    }
+}
+
+/* ==============
+    MOBILE: Footer
+   ============== */
+
+.footer-container {
+    color: rgb(51,51,51);
+    font-family: titillium;
+    border-top: 1px solid $light-grey-color;
+    footer {
+        padding: 0 0 20px 0;
+        p {
+            float: left;
+            margin-left: 2%;
+            line-height: 18px;
+            color: $text-color;
+        }
+        ul {
+            float: right;
+            margin-right: 2%;
+            font-size: 14px;
+            line-height: 18px;
+            color: $green-text-color;
+            li {
+                display: inline;
+            }
+        }
+    }
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+    .wrapper {
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+
+    }
+
+    article {
+        padding: 0 5%;
+    }
+
+    aside {
+        padding: 0 5%;
+    }
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        float: left;
+        width: 27%;
+        padding: 8px;
+        margin: 15px 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+   .header-container {
+       height: 104px;
+   }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    #header-img {
+        margin-left: 2%;
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 45%;
+        margin-top: 20px;
+        margin-right: 2%;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 63%;
+        padding: 0 2% 0 3%;
+    }
+
+    .main aside {
+        float: right;
+        width: 22%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 67%;
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
