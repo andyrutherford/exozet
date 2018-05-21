@@ -231,13 +231,11 @@ section {
     }
 }
 
-form {
-    label {
+form > label {
         text-align: left;
         display: block;
         margin-left: 23%;
         margin-bottom: 10px;
-    }
 }
 
 fieldset {
